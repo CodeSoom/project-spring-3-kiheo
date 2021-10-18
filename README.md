@@ -1,6 +1,6 @@
 # project-spring-3-kiheo
 
-프로젝트 To Do List
+프로젝트 To Do List2
 
 목적 : 국토교통부_국내항공운항정보 Open API를 활용한 운임정보 비교
 
