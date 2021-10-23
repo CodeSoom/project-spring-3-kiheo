@@ -11,10 +11,11 @@ spring:
     url: jdbc:mariadb://localhost:3306/test
     username: root
     password: qweqwe123?
+
   mvc:
     view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+      prefix: /templates/
+      suffix: .html
 
   jpa:
     open-in-view: false
