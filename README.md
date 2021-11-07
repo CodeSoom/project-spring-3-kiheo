@@ -7,6 +7,9 @@
 ToDo List
 
 -로그인화면 및 spring security 로그인 기능개발
+ : user조회, user 생성, password 초기화(jwt token적용)
+ : security filter 적용
+ : loginProcess를 통해 security sessionManagement() 적용
 
 -openAPI Utils 개발(필요 시 cache적용)
 
@@ -19,5 +22,3 @@ ToDo List
 -메인화면 데이터출력영역 결과데이터 적용
 
 
-
-merge test2233
