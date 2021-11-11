@@ -1,0 +1,88 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+
+	// Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+}
+
+group = 'project.spring'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+repositories {
+	jcenter()
+}
+
+dependencies {
+    // Spring Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// tomcat-embed
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+    // Lombok
+    implementation 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    // Spring Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.11.2'
+    runtime 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+
+    // Http Component
+    implementation 'org.apache.httpcomponents:httpclient:4.5.2'
+    // Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // JSON
+    implementation 'org.json:json:20180813'
+
+    // Spring Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    // DozerMapper
+    implementation 'com.github.dozermapper:dozer-core:6.4.0'
+
+    // Spring Developer Tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Spring Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Spring Boot Test
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+    // Spring Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+
+    // Use JUnit Jupiter API for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+
+    // AssertJ
+    testImplementation 'org.assertj:assertj-core:3.18.1'
+
+    // Use JUnit Jupiter Engine for testing.
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'project.spring.kiheo.App'
+}
+test {
+	useJUnitPlatform()
+}
